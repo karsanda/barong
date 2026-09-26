@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: sans-serif;
+      }
+      #box {
+        width: 200px;
+        height: 100px;
+        background: rgb(255, 0, 0);
+      }
+      #hover {
+        width: 100px;
+        height: 50px;
+        background: rgb(0, 0, 255);
+        transition: background 5s;
+      }
+      #hover:hover {
+        background: rgb(0, 255, 0);
+      }
+      #panel {
+        display: none;
+        width: 120px;
+        height: 60px;
+        background: rgb(0, 0, 0);
+      }
+      #panel.open {
+        display: block;
+      }
+      #clock {
+        width: 100px;
+        height: 40px;
+        background: rgb(255, 200, 0);
+      }
+      #tall {
+        height: 3000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <div id="hover"></div>
+    <button id="toggle" onclick="document.getElementById('panel').classList.add('open')">
+      Open
+    </button>
+    <div id="panel"></div>
+    <div id="clock"></div>
+    <div id="tall"></div>
+  </body>
+</html>

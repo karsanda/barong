@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/barong@1/schema/scenario.schema.json",
+  "label": "Example",
+  "url": "https://example.com",
+  "captures": [{ "label": "Content box", "selector": "body > div" }]
+}

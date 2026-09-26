@@ -1,0 +1,45 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  text-transform: capitalize;
+  font-size: 13px;
+}
+
+.chip[aria-pressed="true"] {
+  border-color: var(--chip-color, var(--accent));
+  background: color-mix(in srgb, var(--chip-color, var(--accent)) 12%, var(--surface));
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--chip-color, var(--muted));
+}
+
+.chip[data-status="passed"] {
+  --chip-color: var(--passed);
+}
+.chip[data-status="failed"] {
+  --chip-color: var(--failed);
+}
+.chip[data-status="error"] {
+  --chip-color: var(--error);
+}
+.chip[data-status="new"] {
+  --chip-color: var(--new);
+}
+.chip[data-status="missing"] {
+  --chip-color: var(--missing);
+}

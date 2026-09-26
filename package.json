@@ -1,40 +1,78 @@
 {
   "name": "barong",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "bin": {
-    "barong": "./bin/barong.js"
+  "version": "1.0.0",
+  "description": "Visual regression testing for web pages, powered by Playwright",
+  "keywords": [
+    "diff",
+    "playwright",
+    "screenshot",
+    "testing",
+    "visual-regression"
+  ],
+  "homepage": "https://github.com/KMK-ONLINE/barong#readme",
+  "bugs": {
+    "url": "https://github.com/KMK-ONLINE/barong/issues"
   },
-  "scripts": {
-    "test": "jasmine"
-  },
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KMK-ONLINE/barong.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KMK-ONLINE/barong/issues"
+  "bin": {
+    "barong": "./dist/cli.mjs"
   },
-  "homepage": "https://github.com/KMK-ONLINE/barong#readme",
-  "preferGlobal": "true",
+  "files": [
+    "dist",
+    "report/dist",
+    "templates",
+    "schema"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "tsdown --watch",
+    "dev:report": "vite report",
+    "build": "tsdown && vite build report && pnpm schema",
+    "schema": "node scripts/schema.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p report/tsconfig.json",
+    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test",
+    "prepack": "pnpm build"
+  },
   "dependencies": {
-    "casperjs": "^1.1.0-beta3",
-    "commander": "^2.9.0",
-    "fs-extra": "^0.26.2",
-    "glob": "^5.0.15",
-    "http-server": "^0.11.1",
-    "js-beautify": "^1.5.10",
-    "object-assign": "^4.0.1",
-    "open": "0.0.5",
-    "phantomjs": "^1.9.18",
-    "resemblejs": "^2.0.1",
-    "slimerjs": "^0.10.3",
-    "slug": "^0.9.1"
+    "@sindresorhus/slugify": "^3.0.1",
+    "commander": "^15.0.0",
+    "open": "^11.0.4",
+    "picocolors": "^1.1.1",
+    "pixelmatch": "^7.2.0",
+    "playwright": "^1.63.0",
+    "pngjs": "^7.0.0",
+    "tinyglobby": "^0.2.17",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
-    "image-size": "^0.3.5"
-  }
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^26.6.2",
+    "@types/pngjs": "^6.0.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "jsdom": "^30.1.1",
+    "lefthook": "^2.1.14",
+    "oxfmt": "^0.70.0",
+    "oxlint": "^1.85.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tsdown": "^0.23.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.22.0"
 }

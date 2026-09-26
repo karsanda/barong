@@ -1,0 +1,7 @@
+{
+  "$schema": "https://unpkg.com/barong@1/schema/scenario.schema.json",
+  "label": "Example mobile",
+  "url": "https://example.com",
+  "viewport": { "width": 375, "height": 667 },
+  "captures": [{ "label": "Viewport" }]
+}
