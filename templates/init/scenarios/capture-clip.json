@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/barong@1/schema/scenario.schema.json",
+  "label": "Example region",
+  "url": "https://example.com",
+  "captures": [{ "label": "Top left", "clip": { "x": 0, "y": 0, "width": 800, "height": 300 } }]
+}

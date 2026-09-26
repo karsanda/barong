@@ -1,0 +1,7 @@
+{
+  "$schema": "https://unpkg.com/barong@1/schema/scenario.schema.json",
+  "label": "Playwright home",
+  "url": "https://playwright.dev",
+  "waitUntil": "networkidle",
+  "captures": [{ "label": "Full page", "fullPage": true, "hide": ["iframe"] }]
+}

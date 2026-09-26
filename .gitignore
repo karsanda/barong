@@ -1,8 +1,7 @@
-node_modules
-
-.barong-config.json
-
-bitmaps_*/
-
+node_modules/
+dist/
+report/dist/
+coverage/
 *.log
-*.psd
+*.tsbuildinfo
+.barong-tmp/

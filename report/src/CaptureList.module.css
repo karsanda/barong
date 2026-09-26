@@ -1,0 +1,98 @@
+.list {
+  flex: 1;
+  margin: 0;
+  padding: 0 8px 12px;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-left: 3px solid var(--item-color, transparent);
+  border-radius: var(--radius);
+  background: none;
+  text-align: left;
+}
+
+.item:hover {
+  background: var(--surface-2);
+}
+
+.item[aria-current="true"] {
+  background: var(--surface-2);
+  border-color: var(--border);
+  border-left-color: var(--item-color);
+}
+
+.item[data-status="passed"] {
+  --item-color: var(--passed);
+}
+.item[data-status="failed"] {
+  --item-color: var(--failed);
+}
+.item[data-status="error"] {
+  --item-color: var(--error);
+}
+.item[data-status="new"] {
+  --item-color: var(--new);
+}
+.item[data-status="missing"] {
+  --item-color: var(--missing);
+}
+
+.thumb {
+  flex: none;
+  width: 56px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.label,
+.scenario {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.scenario {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.percent {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}

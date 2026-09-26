@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/barong@1/schema/barong.schema.json",
+  "scenariosDir": "scenarios",
+  "outputDir": "barong",
+  "viewport": { "width": 1400, "height": 900 },
+  "threshold": 0.1,
+  "maxDiffPercent": 0,
+  "concurrency": 4
+}

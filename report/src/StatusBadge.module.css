@@ -1,0 +1,27 @@
+.badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--badge-color);
+  background: color-mix(in srgb, var(--badge-color) 14%, transparent);
+}
+
+.badge[data-status="passed"] {
+  --badge-color: var(--passed);
+}
+.badge[data-status="failed"] {
+  --badge-color: var(--failed);
+}
+.badge[data-status="error"] {
+  --badge-color: var(--error);
+}
+.badge[data-status="new"] {
+  --badge-color: var(--new);
+}
+.badge[data-status="missing"] {
+  --badge-color: var(--missing);
+}
